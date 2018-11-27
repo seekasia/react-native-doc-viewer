@@ -121,7 +121,7 @@ RCT_EXPORT_METHOD(openDoc:(NSArray *)array callback:(RCTResponseSenderBlock)call
             if (callback) {
                 callback(@[[NSNull null], array]);
             }
-            UIViewController* root = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+            UIViewController* root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
             while (root.presentedViewController) {
                 root = [root presentedViewController];
             }
